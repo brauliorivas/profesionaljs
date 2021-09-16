@@ -1,0 +1,19 @@
+{
+  "name": "javascript-profesional",
+  "version": "1.0.0",
+  "description": "Proyecto para el curso profesional de javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brauliorivas/profesionaljs.git"
+  },
+  "author": "Braulio Rivas Abad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brauliorivas/profesionaljs/issues"
+  },
+  "homepage": "https://github.com/brauliorivas/profesionaljs#readme"
+}
