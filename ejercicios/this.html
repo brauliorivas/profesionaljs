@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <script>
+        //global scope
+        console.log(`This: ${this}`)
+
+        //this function scope
+
+        function whoIsThis() {
+            return this;
+        }
+
+        console.log(`Who is this(): ${whoIsThis()}`);
+
+        //this function scope strict mode
+
+        function whoIsThisStrict() {
+            'use strict';
+            return this;
+        }
+
+        //this en un objeto
+
+        console.log(`Who is this(): ${whoIsThisStrict()}`);
+
+    </script>
+</body>
+</html>
