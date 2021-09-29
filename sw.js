@@ -40,5 +40,5 @@ async function cachedResponse(request) {
 async function updateCache(request) {
     const cache = await caches.open(VERSION);
     const response = await fetch(request);
-    return response.status == 200 ? cache.put(request, response) : new Promise((resolve,reject) => resolve('Resolved'));
+    return cache.put(request, response);
 }
