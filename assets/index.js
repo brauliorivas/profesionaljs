@@ -13,3 +13,9 @@ const player = new MediaPlayer({el: video,
 button.onclick = () => player.status == "pause" ? player.play() : player.pause();
 
 mute.onclick = () => player.media.muted == true ? player.unmute() : player.mute();
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(error => {
+        console.log(error.message)
+    });
+}
