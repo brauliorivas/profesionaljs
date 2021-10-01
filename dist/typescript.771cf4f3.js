@@ -103,12 +103,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({6:[function(require,module,exports) {
+})({17:[function(require,module,exports) {
 console.log('Hello TypeScript');
-function add(a, b) {
-    return a + b;
-}
-var sum = add(2, 3);
+// function add(a: number, b: number) {
+//     return a + b;
+// }
+// const sum = add(2, 3);
 // Tipos
 var muted = true;
 muted = false;
@@ -140,7 +140,42 @@ var comodin = "Joker";
 comodin = { type: "Wildcard" };
 // Object
 var someObject = { type: "Wildcard" };
-},{}],33:[function(require,module,exports) {
+// Funciones
+function add(a, b) {
+    return a + b;
+}
+var sum = add(4, 6);
+function createAdder(a) {
+    return function (b) {
+        return a + b;
+    };
+}
+var addFour = createAdder(4);
+var fourPlus6 = addFour(6);
+function fullName(firstName, lastName) {
+    if (lastName === void 0) {
+        lastName = 'Smith';
+    }
+    // lastName ?: string, admite un valor o undefined, no hay valor por defecto, osea puede ser que haya y si no, no regresa nada
+    return firstName + " " + lastName;
+}
+var braulio = fullName("Agente");
+console.log(braulio);
+var rect = {
+    ancho: 4,
+    alto: 6
+    // color: Color.Rojo,
+};
+function area(r) {
+    return r.ancho * r.alto;
+}
+var areaRect = area(rect);
+console.log(areaRect);
+rect.toString = function () {
+    return this.color ? "Un rectangulo " + this.color : "Un rectangulo";
+};
+console.log(rect.toString());
+},{}],39:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -169,7 +204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '38129' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '43011' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -310,5 +345,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[33,6], null)
+},{}]},{},[39,17], null)
 //# sourceMappingURL=/typescript.771cf4f3.map

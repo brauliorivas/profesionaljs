@@ -103,7 +103,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({20:[function(require,module,exports) {
+})({23:[function(require,module,exports) {
 const VERSION = 'v1';
 
 self.addEventListener('install', event => {
@@ -125,7 +125,16 @@ self.addEventListener('fetch', event => {
 
 async function precache() {
     const cache = await caches.open(VERSION);
-    return cache.addAll(['/', '/index.html', '/assets/index.js', '/assets/MediaPlayer.js', '/assets/plugins/AutoPlay.js', '/assets/plugins/AutoPause.js', '/assets/index.css', '/assets/BigBuckBunny.mp4']);
+    return cache.addAll([
+        // '/',
+        // '/index.html',
+        // '/assets/index.js',
+        // '/assets/MediaPlayer.js',
+        // '/assets/plugins/AutoPlay.js',
+        // '/assets/plugins/AutoPause.js',
+        // '/assets/index.css',
+        // '/assets/BigBuckBunny.mp4',
+    ]);
 }
 
 async function cachedResponse(request) {
@@ -139,7 +148,7 @@ async function updateCache(request) {
     const response = await fetch(request);
     return cache.put(request, response);
 }
-},{}],33:[function(require,module,exports) {
+},{}],39:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -168,7 +177,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '38129' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '43011' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -309,5 +318,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[33,20], null)
+},{}]},{},[39,23], null)
 //# sourceMappingURL=/sw.map
