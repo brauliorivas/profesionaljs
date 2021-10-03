@@ -103,7 +103,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({17:[function(require,module,exports) {
+})({29:[function(require,module,exports) {
 console.log('Hello TypeScript');
 // function add(a: number, b: number) {
 //     return a + b;
@@ -175,7 +175,7 @@ rect.toString = function () {
     return this.color ? "Un rectangulo " + this.color : "Un rectangulo";
 };
 console.log(rect.toString());
-},{}],25:[function(require,module,exports) {
+},{}],65:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -204,7 +204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '33323' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '44409' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -345,5 +345,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[25,17], null)
+},{}]},{},[65,29], null)
 //# sourceMappingURL=/typescript.771cf4f3.map

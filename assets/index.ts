@@ -1,23 +1,28 @@
-import MediaPlayer from './MediaPlayer'
-import AutoPlay from './plugins/AutoPlay'
-import AutoPause from './plugins/AutoPause'
+import MediaPlayer from './MediaPlayer';
+import AutoPlay from './plugins/AutoPlay';
+import AutoPause from './plugins/AutoPause';
+import Ads from './plugins/Ads';
 
-const video = document.getElementById('videobunny');
-const button: HTMLElement = document.getElementById('playpause-button');
-const mute: HTMLElement = document.getElementById('mute-button');
+const video = document.querySelector('video');
+const player = new MediaPlayer({
+  el: video,
+  plugins: [new AutoPlay(), new AutoPause(), new Ads()],
+});
 
-const player = new MediaPlayer({el: video, 
-    plugins: [new AutoPlay
-    ,new AutoPause
-    ]
-},'pause');
+const playButton: HTMLElement = document.querySelector('#playButton');
+playButton.onclick = () => player.togglePlay();
 
-button.onclick = () => player.status == "pause" ? player.play() : player.pause();
-
-mute.onclick = () => player.media.muted == true ? player.unmute() : player.mute();
+const muteButton: HTMLElement = document.querySelector('#muteButton');
+muteButton.onclick = () => {
+  if (player.media.muted) {
+    player.unmute();
+  } else {
+    player.mute();
+  }
+};
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../sw.js').catch(error => {
-        console.log(error.message)
-    });
+  navigator.serviceWorker.register('../sw.js').catch(error => {
+    console.log(error.message);
+  });
 }
