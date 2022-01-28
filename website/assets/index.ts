@@ -8,7 +8,7 @@ const player = new MediaPlayer({
   el: video,
   plugins: [new AutoPlay(), new AutoPause(), new Ads()],
 });
-console.log(player)
+
 const playButton: HTMLElement = document.querySelector('#playButton');
 playButton.onclick = () => player.togglePlay();
 
