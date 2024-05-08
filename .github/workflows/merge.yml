@@ -12,10 +12,10 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
+              with:
+                  ref: gh-pages
 
-            - name: Merge main to gh-pages
+            - name: Merge master to gh-pages
               run: |
-                  git pull origin gh-pages
-                  git checkout gh-pages
                   git merge --no-ff master -m "Merge main into gh-pages for deploy"
                   git push origin gh-pages
