@@ -19,7 +19,8 @@ jobs:
               run: |
                   git config user.name github-actions
                   git config user.email github-actions@github.com
-                  git pull origin gh-pages
+                  git pull origin gh-pages --no-rebase --no-ff
                   git checkout gh-pages
                   git merge --no-ff origin/master -m "Merge master into gh-pages for deploy"
+                  git config pull.rebase false
                   git push origin gh-pages
