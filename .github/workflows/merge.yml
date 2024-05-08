@@ -1,0 +1,20 @@
+name: Merge main to gh-pages
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    merge:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Merge main to gh-pages
+              run: |
+                  git checkout gh-pages
+                  git merge --no-ff main -m "Merge main into gh-pages for deploy"
+                  git push origin gh-pages
