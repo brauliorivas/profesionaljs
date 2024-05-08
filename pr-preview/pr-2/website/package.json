@@ -1,0 +1,29 @@
+{
+  "name": "javascript-profesional",
+  "version": "1.0.0",
+  "description": "Proyecto para el curso profesional de javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html ./ejercicios/index.html ./ejercicios/**/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brauliorivas/profesionaljs.git"
+  },
+  "author": "Braulio Rivas Abad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brauliorivas/profesionaljs/issues"
+  },
+  "homepage": "https://github.com/brauliorivas/profesionaljs#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.9.4",
+    "typescript": "^4.4.3"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "dependencies": {
+    "@braulio0000/mediaplayer": "^1.0.0"
+  }
+}
