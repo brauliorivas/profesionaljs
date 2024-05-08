@@ -13,7 +13,7 @@ jobs:
             - name: Checkout to gh-pages
               uses: actions/checkout@v2
               with:
-                  ref: gh-pages
+                  fetch-depth: 0
 
             - name: Merge master to gh-pages
               run: |
