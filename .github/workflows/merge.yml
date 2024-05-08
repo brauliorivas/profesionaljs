@@ -22,4 +22,5 @@ jobs:
                   git pull origin gh-pages
                   git checkout gh-pages
                   git merge --no-ff origin/master -m "Merge master into gh-pages for deploy"
+                  git config pull.rebase false
                   git push origin gh-pages
