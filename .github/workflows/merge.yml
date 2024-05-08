@@ -15,6 +15,7 @@ jobs:
 
             - name: Merge main to gh-pages
               run: |
+                  git pull origin gh-pages
                   git checkout gh-pages
                   git merge --no-ff main -m "Merge main into gh-pages for deploy"
                   git push origin gh-pages
